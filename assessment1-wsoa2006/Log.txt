@@ -1,0 +1,1 @@
+For the gauges, one gauge could zoom the scene and the other can re-arrange the objects to form a clear path for the space ship.
