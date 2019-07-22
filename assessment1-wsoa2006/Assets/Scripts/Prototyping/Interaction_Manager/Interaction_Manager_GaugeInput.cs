@@ -9,14 +9,19 @@ public class Interaction_Manager_GaugeInput : MonoBehaviour
 
     [SerializeField] private Button rightButton;
 
-    [SerializeField] private Gauge_Fill gaugeFillScript;
+    private Gauge_Fill gaugeFillScript;
 
     [SerializeField] private float gaugeFillSpeed;
+
+    [SerializeField] private float gaugeInitialValue;
+    //make sure this value will be within the gaugeFillSpeed
 
     public void Start()
     {
         leftButton.onClick.AddListener(LeftButtonClick);
         rightButton.onClick.AddListener(RightButtonClick);
+        gaugeFillScript = gameObject.GetComponent<Gauge_Fill>();
+        gaugeFillScript.SetFillAmount(gaugeInitialValue);
     }
 
     private void LeftButtonClick()

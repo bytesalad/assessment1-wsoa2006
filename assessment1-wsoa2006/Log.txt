@@ -1,1 +1,8 @@
 For the gauges, one gauge could zoom the scene and the other can re-arrange the objects to form a clear path for the space ship.
+
+Experimentation session 1:
+>> The Interaction_Manager_Movement has a final and initial value for the position of the game object being changed on screen. (new script)
+>> One can now give a default value to the Interaction_Manager_GaugeInput script so that the slider doesn't default to zero if needed.
+>> The Interaction_Manager_GaugeLock script checks if the gauge is in the correct position and "does something".
+
+>> Only when the objects are in the correct location can the spaceship move through the system.
