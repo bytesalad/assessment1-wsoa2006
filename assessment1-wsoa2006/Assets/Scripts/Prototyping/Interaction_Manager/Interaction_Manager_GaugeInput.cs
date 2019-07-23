@@ -20,6 +20,7 @@ public class Interaction_Manager_GaugeInput : MonoBehaviour
     {
         leftButton.onClick.AddListener(LeftButtonClick);
         rightButton.onClick.AddListener(RightButtonClick);
+
         gaugeFillScript = gameObject.GetComponent<Gauge_Fill>();
         gaugeFillScript.SetFillAmount(gaugeInitialValue);
     }
