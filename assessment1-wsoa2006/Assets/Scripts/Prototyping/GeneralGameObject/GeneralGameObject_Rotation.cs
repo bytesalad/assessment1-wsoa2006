@@ -6,6 +6,8 @@ public class GeneralGameObject_Rotation : MonoBehaviour
 {
     [SerializeField] private Gauge_Fill gaugeFillScript;
 
+    [SerializeField] private Interaction_Manager_GaugeLock gaugeLockScript;
+
     [SerializeField] private float initialRotation;
 
     private float finalRotation;
@@ -20,6 +22,6 @@ public class GeneralGameObject_Rotation : MonoBehaviour
     {
         float difference = finalRotation - initialRotation;
 
-        gameObject.transform.rotation = Quaternion.Euler(0, 0, gaugeFillScript.GetFillAmount() * difference);
+        gameObject.transform.rotation = Quaternion.Euler(0, 0, (gaugeFillScript.GetFillAmount() / gaugeLockScript.GetGaugeLock()) * difference);
     }
 }

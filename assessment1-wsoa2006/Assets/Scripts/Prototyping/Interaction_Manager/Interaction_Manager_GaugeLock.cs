@@ -8,6 +8,11 @@ public class Interaction_Manager_GaugeLock : MonoBehaviour
     //this value has to be within the gaugeFillSpeed of the Interaction_Manager_GaugeInput script located on the
     //same game object.
 
+    public float GetGaugeLock()
+    {
+        return gaugeAmountLock;
+    }
+
     private Gauge_Fill gaugeFillScript;
 
     private void Start()

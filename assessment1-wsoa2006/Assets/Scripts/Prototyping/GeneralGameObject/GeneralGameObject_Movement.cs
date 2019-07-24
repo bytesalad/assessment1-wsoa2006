@@ -8,6 +8,8 @@ public class GeneralGameObject_Movement : MonoBehaviour
 
     [SerializeField] private Gauge_Fill gaugeFillScript;
 
+    [SerializeField] private Interaction_Manager_GaugeLock gaugeLockScript;
+
     private Vector2 finalPosition;
 
     private void Start()
@@ -19,6 +21,6 @@ public class GeneralGameObject_Movement : MonoBehaviour
     {
         Vector2 resultant = finalPosition - initialPosition;
 
-        gameObject.transform.position = resultant * gaugeFillScript.GetFillAmount();
+        gameObject.transform.position = resultant * (gaugeFillScript.GetFillAmount() / gaugeLockScript.GetGaugeLock());
     }
 }
