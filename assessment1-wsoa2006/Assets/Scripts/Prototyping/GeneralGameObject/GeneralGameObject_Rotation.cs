@@ -20,8 +20,7 @@ public class GeneralGameObject_Rotation : MonoBehaviour
 
     private void Update()
     {
-        float difference = finalRotation - initialRotation;
-
-        gameObject.transform.rotation = Quaternion.Euler(0, 0, (gaugeFillScript.GetFillAmount() / gaugeLockScript.GetGaugeLock()) * difference);
+        gameObject.transform.rotation = Quaternion.Euler(0, 0, Mathf.LerpUnclamped(initialRotation, finalRotation, gaugeFillScript.GetFillAmount()
+            / gaugeLockScript.GetGaugeLock()));
     }
 }

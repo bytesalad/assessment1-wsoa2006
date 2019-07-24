@@ -13,10 +13,24 @@ public class GeneralGameObject_FollowPath : MonoBehaviour
     private int waypointCount = 0;
     //counts the points that the object must move in between
 
+    [SerializeField] private bool canMove = false;
+
+    private bool endOfArrayFlag = false;
+
+    public void SetCanMove(bool value)
+    {
+        canMove = value;
+    }
+
+    public bool GetEndOfArrayFlag()
+    {
+        return endOfArrayFlag;
+    }
+
     private void Update()
     {
-        if (waypointCount <= (pathPoints.Length - 1))
-        //if there are points to move to
+        if ((waypointCount <= (pathPoints.Length - 1)) && canMove)
+        //if there are points to move to and the object is set to allow to move
         {
             gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, pathPoints[waypointCount].position, speed * Time.deltaTime);
             //go to the next point
@@ -25,6 +39,10 @@ public class GeneralGameObject_FollowPath : MonoBehaviour
             //if the next point is reached
             {
                 waypointCount++;
+                if (waypointCount == pathPoints.Length)
+                {
+                    endOfArrayFlag = true;
+                }
             }
         }
     }

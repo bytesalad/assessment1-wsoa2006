@@ -15,12 +15,13 @@ public class GeneralGameObject_Movement : MonoBehaviour
     private void Start()
     {
         finalPosition = gameObject.transform.position;
+        gameObject.transform.position = initialPosition;
+
+        Debug.Log(finalPosition.ToString());
     }
 
     private void Update()
     {
-        Vector2 resultant = finalPosition - initialPosition;
-
-        gameObject.transform.position = resultant * (gaugeFillScript.GetFillAmount() / gaugeLockScript.GetGaugeLock());
+        gameObject.transform.position = Vector2.LerpUnclamped(initialPosition, finalPosition, gaugeFillScript.GetFillAmount() / gaugeLockScript.GetGaugeLock());
     }
 }

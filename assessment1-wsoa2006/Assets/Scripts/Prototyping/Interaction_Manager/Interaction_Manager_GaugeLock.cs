@@ -15,6 +15,13 @@ public class Interaction_Manager_GaugeLock : MonoBehaviour
 
     private Gauge_Fill gaugeFillScript;
 
+    private bool locked = false;
+
+    public bool GetLocked()
+    {
+        return locked;
+    }
+
     private void Start()
     {
         gaugeFillScript = gameObject.GetComponent<Gauge_Fill>();
@@ -25,7 +32,7 @@ public class Interaction_Manager_GaugeLock : MonoBehaviour
         //mathf.approximately is used because the float values tend to differ slightly for some reason.
         if (Mathf.Approximately(gaugeFillScript.GetFillAmount(), gaugeAmountLock))
         {
-            Debug.Log("Correct value");
+            locked = true;
         }
     }
 }
