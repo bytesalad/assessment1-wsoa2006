@@ -822,6 +822,7 @@ MonoBehaviour:
   gaugeChecks:
   - {fileID: 433960594}
   playerFollowScript: {fileID: 1782407953}
+  sceneToLoad: Scene2
 --- !u!1 &986019631
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,7 +1504,6 @@ MonoBehaviour:
   - {fileID: 539478740}
   - {fileID: 1976778482}
   - {fileID: 1343746492}
-  - {fileID: 0}
   speed: 3
   canMove: 0
 --- !u!212 &1782407954
