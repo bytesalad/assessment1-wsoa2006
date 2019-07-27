@@ -34,5 +34,9 @@ public class Interaction_Manager_GaugeLock : MonoBehaviour
         {
             locked = true;
         }
+        else
+        {
+            locked = false;
+        }
     }
 }
